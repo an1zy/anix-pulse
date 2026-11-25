@@ -1,49 +1,37 @@
 <div align="center">
 
-# ✦ ANIX Pulse ✦
+# ✦ anix.pulse ✦
+### *Minimalist Rust + Tauri v2 HUD, TCP Network Audit &amp; Kill-Switch for Local AI Agents*
 
-**Native Rust + Tauri v2 HUD, Live Network Audit, VRAM Monitor &amp; Kill-Switch for AI Coding Agents, MCP Servers, and Local LLMs.**
-
-[![CI](https://github.com/an1zy/anix-pulse/actions/workflows/ci.yml/badge.svg)](https://github.com/an1zy/anix-pulse/actions/workflows/ci.yml)
-[![Rust](https://img.shields.io/badge/rust-backend-orange.svg?style=flat-square&logo=rust&logoColor=white)](https://www.rust-lang.org/)
-[![Tauri v2](https://img.shields.io/badge/Tauri_v2-native_HUD-24C8D8.svg?style=flat-square&logo=tauri&logoColor=white)](https://tauri.app)
-[![Slop Score: 0%](https://img.shields.io/badge/slop_score-0%25_clean-brightgreen.svg?style=flat-square)](https://github.com/an1zy/slopcheck)
-[![License: MIT](https://img.shields.io/badge/license-MIT-green.svg?style=flat-square)](LICENSE)
+[![CI](https://github.com/an1zy/anix-pulse/actions/workflows/ci.yml/badge.svg?style=for-the-badge)](https://github.com/an1zy/anix-pulse/actions/workflows/ci.yml)
+[![Rust](https://img.shields.io/badge/rust-backend-18181b.svg?style=for-the-badge&logo=rust&logoColor=white)](https://www.rust-lang.org/)
+[![Tauri v2](https://img.shields.io/badge/Tauri_v2-frameless-18181b.svg?style=for-the-badge&logo=tauri&logoColor=white)](https://tauri.app)
+[![Binary Size](https://img.shields.io/badge/binary-~7.2_MB-18181b.svg?style=for-the-badge)](https://github.com/an1zy/anix-pulse/releases)
+[![License: MIT](https://img.shields.io/badge/license-MIT-18181b.svg?style=for-the-badge)](LICENSE)
 
 **English** · [Русский](README.ru.md)
 
 <br/>
 
-<img src="assets/hud-preview.svg" alt="ANIX Pulse HUD Preview" width="880" />
+<img src="assets/hud-preview.svg" alt="anix.pulse HUD" width="880" />
 
 </div>
 
 ---
 
-## Why ANIX Pulse?
+Native desktop HUD in the **anix** monochrome glass aesthetic (~7.2 MB standalone Windows binary, zero Node/npm build dependencies). Built to keep tabs on coding agents, MCP servers, and local LLM runtimes running at the same time.
 
-Running Claude Code, Codex, Cursor, multiple MCP servers, and local Ollama / llama.cpp instances at the same time creates three blind spots:
-1. Zombie MCP servers or models quietly pin 100% of your GPU VRAM or gigabytes of RAM.
-2. Unreviewed MCP servers open unexpected outbound TCP connections with host environment access.
-3. Runaway coding-agent loops burn cloud tokens when you wanted local-first routing.
+## What It Does
 
-**ANIX Pulse** stays in your system tray at minimal RAM footprint (no Electron bloat) and gives you an instant dark-studio control plane.
-
----
-
-## Core Capabilities
-
-- **Live AI Process &amp; TCP Radar (`radar.rs`)**: Auto-detects active coding agents (`Claude Code`, `Codex`, `OpenCode`, `Cursor`, `Antigravity`, `Windsurf`, `Aider`, `Cline`), local runtimes (`Ollama`, `llama.cpp`, `LM Studio`, `vLLM`), and MCP servers (`node`/`python`/`uvx`), masking `--api-key`/`--token` flags and surfacing live outbound TCP sockets per PID.
-- **Hardware &amp; VRAM Fit Monitor (`hardware.rs`)**: Reads NVIDIA VRAM utilization/free headroom/temperature via `nvidia-smi`, system RAM via `sysinfo`, lists active Ollama `/api/ps` models, and shows real-time model fit indicators (`FIT` / `OOM`).
-- **1-Click Panic &amp; Kill-Switch (`actions.rs`)**: Terminate runaway agent/MCP PIDs directly from the HUD, or hit **Panic: Unload VRAM** (from window or tray menu) to unload all loaded Ollama models immediately.
-- **Built-In OpenAI-Compatible Routing Proxy (`proxy.rs`)**: Binds `http://127.0.0.1:8787/v1` inside Rust with `Local-First`, `Cloud Fallback`, and instant `Kill-Switch` modes plus request/latency/token telemetry.
-- **Guard Rules &amp; Audit Log**: Real-time alerts when any MCP opens external TCP sockets, any process exceeds RAM caps, or VRAM hits saturation.
-
----
+- **Process &amp; TCP Radar (`radar.rs`)**: Tracks running coding agents (`Claude Code`, `Codex`, `OpenCode`, `Cursor`, `Antigravity`, `Windsurf`, `Aider`, `Cline`), local runners (`Ollama`, `llama.cpp`, `LM Studio`, `vLLM`), and MCP servers. Masks `--api-key`/`--token` flags in CLI strings and shows outbound TCP sockets per PID.
+- **Hardware &amp; VRAM Fit (`hardware.rs`)**: Reads NVIDIA VRAM/temp via `nvidia-smi`, system RAM via `sysinfo`, active Ollama models (`/api/ps`), and flags which local models fit into free VRAM.
+- **PID Kill-Switch &amp; Tray Unload (`actions.rs`)**: Terminate any stuck agent/MCP process directly from the table or unload active Ollama models via **Unload VRAM** (window header or tray menu).
+- **Local OpenAI Proxy (`proxy.rs`)**: Listens on `http://127.0.0.1:8787/v1` with `Local-First`, `Cloud Fallback`, and `Kill-Switch` modes plus request/latency/token counters.
+- **Guard Rules**: Raises alerts when an MCP opens an external TCP socket, a process crosses your RAM cap, or VRAM saturation passes threshold.
 
 ## Build from Source
 
-Requires Rust (`stable`) and system WebView2 (pre-installed on Windows 10/11). No Node/npm build toolchain needed.
+Requires Rust (`stable`) and Windows WebView2 (pre-installed on Windows 10/11).
 
 ```bash
 git clone https://github.com/an1zy/anix-pulse.git
@@ -52,7 +40,7 @@ cargo test
 cargo build --release
 ```
 
----
+Pre-built Windows binaries are in [Releases](https://github.com/an1zy/anix-pulse/releases).
 
 ## License
 

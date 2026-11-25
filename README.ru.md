@@ -1,48 +1,37 @@
 <div align="center">
 
-# ✦ ANIX Pulse ✦
+# ✦ anix.pulse ✦
+### *Минималистичный Rust + Tauri v2 HUD, сетевой аудит и стоп-кран для AI-агентов и локальных LLM*
 
-**Нативный Rust + Tauri v2 HUD, аудит сетевых сокетов, мониторинг VRAM и Kill-Switch для ИИ-агентов, MCP-серверов и локальных LLM.**
-
-[![CI](https://github.com/an1zy/anix-pulse/actions/workflows/ci.yml/badge.svg)](https://github.com/an1zy/anix-pulse/actions/workflows/ci.yml)
-[![Rust](https://img.shields.io/badge/rust-backend-orange.svg?style=flat-square&logo=rust&logoColor=white)](https://www.rust-lang.org/)
-[![Tauri v2](https://img.shields.io/badge/Tauri_v2-native_HUD-24C8D8.svg?style=flat-square&logo=tauri&logoColor=white)](https://tauri.app)
-[![Slop Score: 0%](https://img.shields.io/badge/slop_score-0%25_clean-brightgreen.svg?style=flat-square)](https://github.com/an1zy/slopcheck)
-[![License: MIT](https://img.shields.io/badge/license-MIT-green.svg?style=flat-square)](LICENSE)
+[![CI](https://github.com/an1zy/anix-pulse/actions/workflows/ci.yml/badge.svg?style=for-the-badge)](https://github.com/an1zy/anix-pulse/actions/workflows/ci.yml)
+[![Rust](https://img.shields.io/badge/rust-backend-18181b.svg?style=for-the-badge&logo=rust&logoColor=white)](https://www.rust-lang.org/)
+[![Tauri v2](https://img.shields.io/badge/Tauri_v2-frameless-18181b.svg?style=for-the-badge&logo=tauri&logoColor=white)](https://tauri.app)
+[![Binary Size](https://img.shields.io/badge/binary-~7.2_MB-18181b.svg?style=for-the-badge)](https://github.com/an1zy/anix-pulse/releases)
+[![License: MIT](https://img.shields.io/badge/license-MIT-18181b.svg?style=for-the-badge)](LICENSE)
 
 [English](README.md) · **Русский**
 
 <br/>
 
-<img src="assets/hud-preview.svg" alt="ANIX Pulse HUD" width="880" />
+<img src="assets/hud-preview.svg" alt="anix.pulse HUD" width="880" />
 
 </div>
 
 ---
 
-## Зачем нужен ANIX Pulse?
+Нативный десктопный HUD в монохромном стеклянном стиле **anix** (~7.2 МБ exe на Windows, без Node/npm). Показывает всё, что крутится на машине из AI-агентов, MCP-серверов и локальных моделей.
 
-Когда на машине одновременно крутятся Claude Code, Codex, Cursor, несколько MCP-серверов и Ollama / llama.cpp, появляются три проблемы:
-1. Забытые модели и агенты втихую забивают всю VRAM и гигабайты RAM.
-2. Сторонние MCP-серверы открывают левые исходящие TCP-соединения.
-3. Зациклившийся агент жжёт облачные токены, когда можно было переключиться на локальную модель или стоп-кран.
+## Что умеет
 
-**ANIX Pulse** живёт в трее без Electron-блоата и даёт мгновенный тёмно-студийный HUD-контроль над всем AI-зоопарком.
+- **Радар процессов и TCP-сокетов (`radar.rs`)**: находит процессы агентов (`Claude Code`, `Codex`, `OpenCode`, `Cursor`, `Antigravity`, `Windsurf`, `Aider`, `Cline`), локальных движков (`Ollama`, `llama.cpp`, `LM Studio`, `vLLM`) и MCP-серверов. Маскирует `--api-key`/`--token` и показывает внешние TCP-подключения по PID.
+- **VRAM и Hardware Fit (`hardware.rs`)**: снимает загрузку/температуру NVIDIA через `nvidia-smi`, RAM через `sysinfo`, загруженные модели Ollama (`/api/ps`) и показывает, что влезает в свободную VRAM.
+- **Kill-Switch и выгрузка VRAM (`actions.rs`)**: убийство любого PID из таблицы и быстрая выгрузка моделей Ollama из VRAM через **Unload VRAM** или меню трея.
+- **Локальный OpenAI-прокси (`proxy.rs`)**: слушает `http://127.0.0.1:8787/v1` с режимами `Local-First`, `Cloud Fallback` и `Kill-Switch`.
+- **Алерты**: реагирует на внешние TCP-соединения MCP-серверов, превышение лимита RAM на процесс и забитую VRAM.
 
----
+## Сборка
 
-## Возможности
-
-- **Живой радар агентов, MCP и LLM (`radar.rs`)**: автоматически находит процессы ИИ-агентов, MCP-серверов и локальных движков, маскирует `--api-key`/`--token` в командной строке и показывает активные внешние TCP-соединения по PID.
-- **VRAM и Hardware Fit (`hardware.rs`)**: считывает загрузку/свободную память/температуру NVIDIA GPU, системную RAM, активные модели Ollama (`/api/ps`) и подсказывает, какие кванты влезают в оставшуюся VRAM.
-- **Кнопка паники и Kill-Switch (`actions.rs`)**: мгновенное завершение зависшего PID или выгрузка всех моделей Ollama из VRAM в один клик (включая меню в трее).
-- **Встроенный OpenAI-совместимый прокси (`proxy.rs`)**: слушает `http://127.0.0.1:8787/v1` прямо внутри Rust-бинарника с режимами `Local-First`, `Cloud Fallback` и `Kill-Switch`.
-
----
-
-## Сборка из исходников
-
-Нужен только Rust (`stable`), без Node/npm.
+Нужен только Rust (`stable`) и системный WebView2.
 
 ```bash
 git clone https://github.com/an1zy/anix-pulse.git
@@ -51,7 +40,7 @@ cargo test
 cargo build --release
 ```
 
----
+Готовые сборки под Windows лежат в [Releases](https://github.com/an1zy/anix-pulse/releases).
 
 ## Лицензия
 

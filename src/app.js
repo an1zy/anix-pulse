@@ -17,8 +17,8 @@ function esc(text) {
 
 function catBadge(cat) {
   if (cat === "MCP") return '<span class="pill pill-amber">MCP</span>';
-  if (cat === "LLM") return '<span class="pill pill-cyan">LLM</span>';
-  return '<span class="pill pill-green">AGENT</span>';
+  if (cat === "LLM") return '<span class="pill pill-mono">LLM</span>';
+  return '<span class="pill pill-mono">AGENT</span>';
 }
 
 function renderHardware(hw, ollamaModels) {
@@ -34,7 +34,7 @@ function renderHardware(hw, ollamaModels) {
     const pct = Math.round((hw.vram_used_mb / hw.vram_total_mb) * 100);
     const circ = 314.16;
     ring.style.strokeDashoffset = (circ * (1 - pct / 100)).toFixed(2);
-    ring.style.stroke = pct >= 90 ? "#ef4444" : pct >= 70 ? "#f59e0b" : "#10b981";
+    ring.style.stroke = pct >= 90 ? "#f87171" : pct >= 70 ? "#fbbf24" : "#ffffff";
     pctEl.textContent = `${pct}%`;
     vramEl.textContent = `${(hw.vram_used_mb / 1024).toFixed(1)} used / ${(hw.vram_free_mb / 1024).toFixed(1)} GB free`;
     thermEl.textContent = `${hw.gpu_util_pct}% · ${hw.gpu_temp_c} C`;

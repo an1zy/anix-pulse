@@ -1,115 +1,135 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="880" height="520" viewBox="0 0 880 520">
-  <rect width="880" height="520" rx="16" fill="#09090b"/>
-  <rect x="10" y="10" width="860" height="500" rx="14" fill="#111116" stroke="#27272a"/>
-  <rect x="10" y="10" width="860" height="38" rx="12" fill="#0d0d12"/>
-  <line x1="10" y1="48" x2="870" y2="48" stroke="#27272a"/>
-  <circle cx="30" cy="29" r="5" fill="#10b981"/>
-  <text x="44" y="33" fill="#fafafa" font-size="13" font-weight="800" letter-spacing="0.8" font-family="system-ui, -apple-system, Segoe UI, sans-serif">ANIX PULSE</text>
-  <text x="142" y="33" fill="#71717a" font-size="11" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">AI HUD · v0.1</text>
-  <rect x="652" y="17" width="136" height="24" rx="6" fill="#2a1114" stroke="#ef4444" stroke-opacity="0.6"/>
-  <text x="720" y="33" text-anchor="middle" fill="#fca5a5" font-size="11" font-weight="700" font-family="system-ui, -apple-system, Segoe UI, sans-serif">Panic: Unload VRAM</text>
-  <text x="844" y="33" text-anchor="end" fill="#71717a" font-size="12" font-family="system-ui, -apple-system, Segoe UI, sans-serif">—  □  ✕</text>
+  <defs>
+    <radialGradient id="glassGlow1" cx="18%" cy="6%" r="55%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#0a0a0a" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glassGlow2" cx="85%" cy="94%" r="50%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.045"/>
+      <stop offset="100%" stop-color="#0a0a0a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="glassCard" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.075"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.025"/>
+    </linearGradient>
+  </defs>
+  <rect width="880" height="520" rx="16" fill="#0a0a0a"/>
+  <rect width="880" height="520" rx="16" fill="url(#glassGlow1)"/>
+  <rect width="880" height="520" rx="16" fill="url(#glassGlow2)"/>
+  <rect x="8" y="8" width="864" height="504" rx="14" fill="#101010" fill-opacity="0.88" stroke="#ffffff" stroke-opacity="0.1"/>
+  <rect x="8" y="8" width="864" height="42" rx="14" fill="#141414" fill-opacity="0.9"/>
+  <line x1="8" y1="50" x2="872" y2="50" stroke="#ffffff" stroke-opacity="0.08"/>
+  <circle cx="28" cy="29" r="3.5" fill="#ffffff"/>
+  <text x="41" y="34" fill="#ffffff" font-size="14.5" font-weight="700" letter-spacing="-0.4" font-family="Inter, -apple-system, Segoe UI, sans-serif">anix<tspan fill="#8e8e8e">.pulse</tspan></text>
+  <text x="118" y="34" fill="#5a5a5a" font-size="11" font-family="ui-monospace, Consolas, monospace">v0.1</text>
+  <rect x="666" y="17" width="112" height="24" rx="7" fill="#ffffff" fill-opacity="0.06" stroke="#ffffff" stroke-opacity="0.1"/>
+  <text x="722" y="33" text-anchor="middle" fill="#e4e4e4" font-size="11" font-weight="600" font-family="Inter, -apple-system, Segoe UI, sans-serif">Unload VRAM</text>
+  <text x="850" y="33" text-anchor="end" fill="#6f6f6f" font-size="11.5" font-family="Inter, -apple-system, Segoe UI, sans-serif">—  □  ×</text>
 
   <!-- Left Hero Card: Hardware & VRAM -->
-  <rect x="24" y="62" width="410" height="196" rx="12" fill="#14141b" stroke="#27272a"/>
-  <text x="38" y="84" fill="#71717a" font-size="10.5" font-weight="700" letter-spacing="1" font-family="system-ui, -apple-system, Segoe UI, sans-serif">HARDWARE &amp; VRAM FIT</text>
-  <rect x="278" y="69" width="142" height="22" rx="11" fill="#082f3a" stroke="#22d3ee" stroke-opacity="0.45"/>
-  <text x="349" y="84" text-anchor="middle" fill="#67e8f9" font-size="10.5" font-weight="700" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">NVIDIA RTX 4070</text>
-  <circle cx="88" cy="146" r="40" fill="none" stroke="#1e293b" stroke-width="9"/>
-  <circle cx="88" cy="146" r="40" fill="none" stroke="#10b981" stroke-width="9" stroke-linecap="round" stroke-dasharray="251.33" stroke-dashoffset="115.6" transform="rotate(-90 88 146)"/>
-  <text x="88" y="150" text-anchor="middle" fill="#fafafa" font-size="18" font-weight="800" font-family="system-ui, -apple-system, Segoe UI, sans-serif">54%</text>
-  <text x="88" y="164" text-anchor="middle" fill="#71717a" font-size="9" font-family="system-ui, -apple-system, Segoe UI, sans-serif">VRAM</text>
-  <rect x="148" y="106" width="272" height="26" rx="7" fill="#181820" stroke="#22222c"/>
-  <text x="158" y="123" fill="#71717a" font-size="10" font-weight="700" font-family="system-ui, -apple-system, Segoe UI, sans-serif">VRAM USED / FREE</text>
-  <text x="410" y="123" text-anchor="end" fill="#fafafa" font-size="11.5" font-weight="600" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">6.5 / 5.5 GB free</text>
-  <rect x="148" y="138" width="272" height="26" rx="7" fill="#181820" stroke="#22222c"/>
-  <text x="158" y="155" fill="#71717a" font-size="10" font-weight="700" font-family="system-ui, -apple-system, Segoe UI, sans-serif">SYSTEM RAM</text>
-  <text x="410" y="155" text-anchor="end" fill="#fafafa" font-size="11.5" font-weight="600" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">18.4 / 32.0 GB</text>
-  <rect x="148" y="170" width="272" height="26" rx="7" fill="#181820" stroke="#22222c"/>
-  <text x="158" y="187" fill="#71717a" font-size="10" font-weight="700" font-family="system-ui, -apple-system, Segoe UI, sans-serif">GPU UTIL / TEMP</text>
-  <text x="410" y="187" text-anchor="end" fill="#34d399" font-size="11.5" font-weight="600" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">42% · 56 C</text>
-  <rect x="38" y="214" width="174" height="24" rx="6" fill="#052e22" stroke="#10b981" stroke-opacity="0.4"/>
-  <text x="46" y="230" fill="#6ee7b7" font-size="10.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">FIT · Qwen2.5-Coder-7B</text>
-  <rect x="220" y="214" width="160" height="24" rx="6" fill="#18181f" stroke="#27272a"/>
-  <text x="228" y="230" fill="#71717a" font-size="10.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">OOM · Qwen3-14B Q4</text>
+  <rect x="22" y="64" width="412" height="196" rx="14" fill="url(#glassCard)" stroke="#ffffff" stroke-opacity="0.09"/>
+  <line x1="34" y1="65" x2="422" y2="65" stroke="#ffffff" stroke-opacity="0.16"/>
+  <text x="38" y="86" fill="#8e8e8e" font-size="10.5" font-weight="600" letter-spacing="0.8" font-family="Inter, -apple-system, Segoe UI, sans-serif">HARDWARE &amp; VRAM</text>
+  <rect x="292" y="71" width="128" height="22" rx="11" fill="#ffffff" fill-opacity="0.06" stroke="#ffffff" stroke-opacity="0.1"/>
+  <text x="356" y="86" text-anchor="middle" fill="#e4e4e4" font-size="10.5" font-weight="600" font-family="ui-monospace, Consolas, monospace">RTX 4070</text>
+  <circle cx="88" cy="148" r="40" fill="none" stroke="#ffffff" stroke-opacity="0.08" stroke-width="9"/>
+  <circle cx="88" cy="148" r="40" fill="none" stroke="#ffffff" stroke-width="9" stroke-linecap="round" stroke-dasharray="251.33" stroke-dashoffset="115.6" transform="rotate(-90 88 148)"/>
+  <text x="88" y="152" text-anchor="middle" fill="#ffffff" font-size="17" font-weight="700" font-family="Inter, -apple-system, Segoe UI, sans-serif">54%</text>
+  <text x="88" y="166" text-anchor="middle" fill="#8e8e8e" font-size="9" letter-spacing="1" font-family="Inter, -apple-system, Segoe UI, sans-serif">VRAM</text>
+  <rect x="148" y="108" width="272" height="26" rx="8" fill="#ffffff" fill-opacity="0.035" stroke="#ffffff" stroke-opacity="0.06"/>
+  <text x="158" y="125" fill="#8e8e8e" font-size="10" font-weight="600" font-family="Inter, -apple-system, Segoe UI, sans-serif">VRAM</text>
+  <text x="410" y="125" text-anchor="end" fill="#ffffff" font-size="11.5" font-weight="600" font-family="ui-monospace, Consolas, monospace">6.5 / 5.5 GB free</text>
+  <rect x="148" y="140" width="272" height="26" rx="8" fill="#ffffff" fill-opacity="0.035" stroke="#ffffff" stroke-opacity="0.06"/>
+  <text x="158" y="157" fill="#8e8e8e" font-size="10" font-weight="600" font-family="Inter, -apple-system, Segoe UI, sans-serif">RAM</text>
+  <text x="410" y="157" text-anchor="end" fill="#ffffff" font-size="11.5" font-weight="600" font-family="ui-monospace, Consolas, monospace">18.4 / 32.0 GB</text>
+  <rect x="148" y="172" width="272" height="26" rx="8" fill="#ffffff" fill-opacity="0.035" stroke="#ffffff" stroke-opacity="0.06"/>
+  <text x="158" y="189" fill="#8e8e8e" font-size="10" font-weight="600" font-family="Inter, -apple-system, Segoe UI, sans-serif">GPU</text>
+  <text x="410" y="189" text-anchor="end" fill="#e4e4e4" font-size="11.5" font-weight="600" font-family="ui-monospace, Consolas, monospace">42% · 56 C</text>
+  <rect x="38" y="216" width="166" height="23" rx="6" fill="#34d399" fill-opacity="0.09" stroke="#34d399" stroke-opacity="0.28"/>
+  <text x="46" y="231" fill="#6ee7b7" font-size="10.5" font-family="ui-monospace, Consolas, monospace">FIT · Qwen2.5-Coder-7B</text>
+  <rect x="212" y="216" width="154" height="23" rx="6" fill="#ffffff" fill-opacity="0.03" stroke="#ffffff" stroke-opacity="0.06"/>
+  <text x="220" y="231" fill="#5a5a5a" font-size="10.5" font-family="ui-monospace, Consolas, monospace">OOM · Qwen3-14B Q4</text>
 
   <!-- Right Hero Card: Local Proxy -->
-  <rect x="446" y="62" width="410" height="196" rx="12" fill="#14141b" stroke="#27272a"/>
-  <text x="460" y="84" fill="#71717a" font-size="10.5" font-weight="700" letter-spacing="1" font-family="system-ui, -apple-system, Segoe UI, sans-serif">LOCAL ROUTING PROXY</text>
-  <rect x="706" y="69" width="136" height="22" rx="11" fill="#052e22" stroke="#10b981" stroke-opacity="0.45"/>
-  <text x="774" y="84" text-anchor="middle" fill="#34d399" font-size="10.5" font-weight="700" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">127.0.0.1:8787</text>
-  <rect x="460" y="102" width="122" height="26" rx="7" fill="#052e22" stroke="#10b981"/>
-  <text x="521" y="119" text-anchor="middle" fill="#34d399" font-size="11" font-weight="700" font-family="system-ui, -apple-system, Segoe UI, sans-serif">Local-First</text>
-  <rect x="590" y="102" width="122" height="26" rx="7" fill="#181820" stroke="#27272a"/>
-  <text x="651" y="119" text-anchor="middle" fill="#a1a1aa" font-size="11" font-weight="600" font-family="system-ui, -apple-system, Segoe UI, sans-serif">Cloud Fallback</text>
-  <rect x="720" y="102" width="122" height="26" rx="7" fill="#181820" stroke="#27272a"/>
-  <text x="781" y="119" text-anchor="middle" fill="#a1a1aa" font-size="11" font-weight="600" font-family="system-ui, -apple-system, Segoe UI, sans-serif">Kill-Switch</text>
-  <rect x="460" y="138" width="90" height="44" rx="8" fill="#181820" stroke="#22222c"/>
-  <text x="468" y="153" fill="#71717a" font-size="9.5" font-weight="700" font-family="system-ui, -apple-system, Segoe UI, sans-serif">REQUESTS</text>
-  <text x="468" y="172" fill="#fafafa" font-size="15" font-weight="700" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">142</text>
-  <rect x="558" y="138" width="90" height="44" rx="8" fill="#181820" stroke="#22222c"/>
-  <text x="566" y="153" fill="#71717a" font-size="9.5" font-weight="700" font-family="system-ui, -apple-system, Segoe UI, sans-serif">LOCAL</text>
-  <text x="566" y="172" fill="#34d399" font-size="15" font-weight="700" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">131</text>
-  <rect x="656" y="138" width="90" height="44" rx="8" fill="#181820" stroke="#22222c"/>
-  <text x="664" y="153" fill="#71717a" font-size="9.5" font-weight="700" font-family="system-ui, -apple-system, Segoe UI, sans-serif">FAILOVERS</text>
-  <text x="664" y="172" fill="#fbbf24" font-size="15" font-weight="700" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">11</text>
-  <rect x="754" y="138" width="88" height="44" rx="8" fill="#181820" stroke="#22222c"/>
-  <text x="762" y="153" fill="#71717a" font-size="9.5" font-weight="700" font-family="system-ui, -apple-system, Segoe UI, sans-serif">TOKENS</text>
-  <text x="762" y="172" fill="#fafafa" font-size="15" font-weight="700" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">89,420</text>
-  <rect x="460" y="192" width="382" height="24" rx="6" fill="#0d0d12"/>
-  <text x="470" y="208" fill="#a1a1aa" font-size="10.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">Ollama (Local) · qwen2.5-coder:7b</text>
-  <text x="832" y="208" text-anchor="end" fill="#34d399" font-size="10.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">184ms · 200</text>
-  <rect x="460" y="220" width="382" height="24" rx="6" fill="#0d0d12"/>
-  <text x="470" y="236" fill="#a1a1aa" font-size="10.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">Cloud Fallback · openrouter/free</text>
-  <text x="832" y="236" text-anchor="end" fill="#fbbf24" font-size="10.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">612ms · 200</text>
+  <rect x="446" y="64" width="412" height="196" rx="14" fill="url(#glassCard)" stroke="#ffffff" stroke-opacity="0.09"/>
+  <line x1="458" y1="65" x2="846" y2="65" stroke="#ffffff" stroke-opacity="0.16"/>
+  <text x="462" y="86" fill="#8e8e8e" font-size="10.5" font-weight="600" letter-spacing="0.8" font-family="Inter, -apple-system, Segoe UI, sans-serif">LOCAL PROXY</text>
+  <rect x="706" y="71" width="136" height="22" rx="11" fill="#34d399" fill-opacity="0.1" stroke="#34d399" stroke-opacity="0.28"/>
+  <text x="774" y="86" text-anchor="middle" fill="#6ee7b7" font-size="10.5" font-weight="600" font-family="ui-monospace, Consolas, monospace">127.0.0.1:8787</text>
+  <rect x="462" y="104" width="122" height="26" rx="8" fill="#ffffff"/>
+  <text x="523" y="121" text-anchor="middle" fill="#0a0a0a" font-size="11" font-weight="700" font-family="Inter, -apple-system, Segoe UI, sans-serif">Local-First</text>
+  <rect x="592" y="104" width="122" height="26" rx="8" fill="#ffffff" fill-opacity="0.055" stroke="#ffffff" stroke-opacity="0.08"/>
+  <text x="653" y="121" text-anchor="middle" fill="#8e8e8e" font-size="11" font-weight="600" font-family="Inter, -apple-system, Segoe UI, sans-serif">Cloud Fallback</text>
+  <rect x="722" y="104" width="120" height="26" rx="8" fill="#ffffff" fill-opacity="0.055" stroke="#ffffff" stroke-opacity="0.08"/>
+  <text x="782" y="121" text-anchor="middle" fill="#8e8e8e" font-size="11" font-weight="600" font-family="Inter, -apple-system, Segoe UI, sans-serif">Kill-Switch</text>
+  <rect x="462" y="140" width="89" height="44" rx="9" fill="#ffffff" fill-opacity="0.035" stroke="#ffffff" stroke-opacity="0.06"/>
+  <text x="470" y="155" fill="#8e8e8e" font-size="9.5" font-weight="600" font-family="Inter, -apple-system, Segoe UI, sans-serif">REQUESTS</text>
+  <text x="470" y="174" fill="#ffffff" font-size="14.5" font-weight="700" font-family="ui-monospace, Consolas, monospace">142</text>
+  <rect x="559" y="140" width="89" height="44" rx="9" fill="#ffffff" fill-opacity="0.035" stroke="#ffffff" stroke-opacity="0.06"/>
+  <text x="567" y="155" fill="#8e8e8e" font-size="9.5" font-weight="600" font-family="Inter, -apple-system, Segoe UI, sans-serif">LOCAL</text>
+  <text x="567" y="174" fill="#ffffff" font-size="14.5" font-weight="700" font-family="ui-monospace, Consolas, monospace">131</text>
+  <rect x="656" y="140" width="89" height="44" rx="9" fill="#ffffff" fill-opacity="0.035" stroke="#ffffff" stroke-opacity="0.06"/>
+  <text x="664" y="155" fill="#8e8e8e" font-size="9.5" font-weight="600" font-family="Inter, -apple-system, Segoe UI, sans-serif">CLOUD</text>
+  <text x="664" y="174" fill="#e4e4e4" font-size="14.5" font-weight="700" font-family="ui-monospace, Consolas, monospace">11</text>
+  <rect x="753" y="140" width="89" height="44" rx="9" fill="#ffffff" fill-opacity="0.035" stroke="#ffffff" stroke-opacity="0.06"/>
+  <text x="761" y="155" fill="#8e8e8e" font-size="9.5" font-weight="600" font-family="Inter, -apple-system, Segoe UI, sans-serif">TOKENS</text>
+  <text x="761" y="174" fill="#ffffff" font-size="14.5" font-weight="700" font-family="ui-monospace, Consolas, monospace">89,420</text>
+  <rect x="462" y="194" width="380" height="23" rx="7" fill="#ffffff" fill-opacity="0.028" stroke="#ffffff" stroke-opacity="0.05"/>
+  <text x="472" y="209" fill="#8e8e8e" font-size="10.5" font-family="ui-monospace, Consolas, monospace">Ollama · qwen2.5-coder:7b</text>
+  <text x="832" y="209" text-anchor="end" fill="#6ee7b7" font-size="10.5" font-family="ui-monospace, Consolas, monospace">184ms · 200</text>
+  <rect x="462" y="222" width="380" height="23" rx="7" fill="#ffffff" fill-opacity="0.028" stroke="#ffffff" stroke-opacity="0.05"/>
+  <text x="472" y="237" fill="#8e8e8e" font-size="10.5" font-family="ui-monospace, Consolas, monospace">Fallback · openrouter/free</text>
+  <text x="832" y="237" text-anchor="end" fill="#fde68a" font-size="10.5" font-family="ui-monospace, Consolas, monospace">612ms · 200</text>
 
-  <!-- Bottom Left: Live Radar -->
-  <rect x="24" y="270" width="480" height="224" rx="12" fill="#14141b" stroke="#27272a"/>
-  <text x="38" y="292" fill="#71717a" font-size="10.5" font-weight="700" letter-spacing="1" font-family="system-ui, -apple-system, Segoe UI, sans-serif">LIVE AI AGENT, MCP &amp; LLM RADAR</text>
-  <rect x="424" y="277" width="66" height="20" rx="10" fill="#18181f" stroke="#27272a"/>
-  <text x="457" y="291" text-anchor="middle" fill="#a1a1aa" font-size="10" font-weight="700" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">3 active</text>
-  <text x="38" y="316" fill="#71717a" font-size="10" font-family="system-ui, -apple-system, Segoe UI, sans-serif">TYPE</text>
-  <text x="102" y="316" fill="#71717a" font-size="10" font-family="system-ui, -apple-system, Segoe UI, sans-serif">PROCESS</text>
-  <text x="278" y="316" fill="#71717a" font-size="10" font-family="system-ui, -apple-system, Segoe UI, sans-serif">RAM</text>
-  <text x="342" y="316" fill="#71717a" font-size="10" font-family="system-ui, -apple-system, Segoe UI, sans-serif">NETWORK</text>
-  <text x="454" y="316" fill="#71717a" font-size="10" font-family="system-ui, -apple-system, Segoe UI, sans-serif">ACTION</text>
-  <line x1="36" y1="324" x2="490" y2="324" stroke="#27272a"/>
+  <!-- Bottom Left: Active Processes -->
+  <rect x="22" y="272" width="482" height="224" rx="14" fill="url(#glassCard)" stroke="#ffffff" stroke-opacity="0.09"/>
+  <line x1="34" y1="273" x2="492" y2="273" stroke="#ffffff" stroke-opacity="0.16"/>
+  <text x="38" y="294" fill="#8e8e8e" font-size="10.5" font-weight="600" letter-spacing="0.8" font-family="Inter, -apple-system, Segoe UI, sans-serif">ACTIVE PROCESSES</text>
+  <rect x="424" y="279" width="66" height="20" rx="10" fill="#ffffff" fill-opacity="0.04" stroke="#ffffff" stroke-opacity="0.08"/>
+  <text x="457" y="293" text-anchor="middle" fill="#8e8e8e" font-size="10" font-weight="600" font-family="ui-monospace, Consolas, monospace">3 active</text>
+  <text x="38" y="318" fill="#5a5a5a" font-size="10" font-family="Inter, -apple-system, Segoe UI, sans-serif">TYPE</text>
+  <text x="102" y="318" fill="#5a5a5a" font-size="10" font-family="Inter, -apple-system, Segoe UI, sans-serif">PROCESS</text>
+  <text x="278" y="318" fill="#5a5a5a" font-size="10" font-family="Inter, -apple-system, Segoe UI, sans-serif">RAM</text>
+  <text x="342" y="318" fill="#5a5a5a" font-size="10" font-family="Inter, -apple-system, Segoe UI, sans-serif">NETWORK</text>
+  <text x="454" y="318" fill="#5a5a5a" font-size="10" font-family="Inter, -apple-system, Segoe UI, sans-serif">ACTION</text>
+  <line x1="36" y1="326" x2="490" y2="326" stroke="#ffffff" stroke-opacity="0.08"/>
 
-  <rect x="38" y="336" width="48" height="20" rx="10" fill="#052e22" stroke="#10b981" stroke-opacity="0.4"/>
-  <text x="62" y="350" text-anchor="middle" fill="#34d399" font-size="10" font-weight="700" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">AGENT</text>
-  <text x="102" y="350" fill="#fafafa" font-size="11.5" font-weight="700" font-family="system-ui, -apple-system, Segoe UI, sans-serif">Claude Code</text>
-  <text x="278" y="350" fill="#e4e4e7" font-size="11" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">612 MB</text>
-  <text x="342" y="350" fill="#a1a1aa" font-size="11" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">1 TCP</text>
-  <rect x="448" y="336" width="40" height="20" rx="6" fill="#2a1114" stroke="#ef4444" stroke-opacity="0.5"/>
-  <text x="468" y="350" text-anchor="middle" fill="#f87171" font-size="10" font-weight="700" font-family="system-ui, -apple-system, Segoe UI, sans-serif">Kill</text>
+  <rect x="38" y="338" width="48" height="20" rx="10" fill="#ffffff" fill-opacity="0.06" stroke="#ffffff" stroke-opacity="0.1"/>
+  <text x="62" y="352" text-anchor="middle" fill="#e4e4e4" font-size="10" font-weight="600" font-family="ui-monospace, Consolas, monospace">AGENT</text>
+  <text x="102" y="352" fill="#ffffff" font-size="11.5" font-weight="600" font-family="Inter, -apple-system, Segoe UI, sans-serif">Claude Code</text>
+  <text x="278" y="352" fill="#e4e4e4" font-size="11" font-family="ui-monospace, Consolas, monospace">612 MB</text>
+  <text x="342" y="352" fill="#8e8e8e" font-size="11" font-family="ui-monospace, Consolas, monospace">1 TCP</text>
+  <rect x="448" y="338" width="40" height="20" rx="6" fill="#ffffff" fill-opacity="0.055" stroke="#ffffff" stroke-opacity="0.09"/>
+  <text x="468" y="352" text-anchor="middle" fill="#e4e4e4" font-size="10" font-weight="600" font-family="Inter, -apple-system, Segoe UI, sans-serif">Kill</text>
 
-  <rect x="38" y="376" width="48" height="20" rx="10" fill="#332206" stroke="#f59e0b" stroke-opacity="0.4"/>
-  <text x="62" y="390" text-anchor="middle" fill="#fbbf24" font-size="10" font-weight="700" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">MCP</text>
-  <text x="102" y="390" fill="#fafafa" font-size="11.5" font-weight="700" font-family="system-ui, -apple-system, Segoe UI, sans-serif">MCP: node.exe</text>
-  <text x="278" y="390" fill="#e4e4e7" font-size="11" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">248 MB</text>
-  <text x="342" y="390" fill="#f87171" font-size="11" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">45.33.32.156:443</text>
-  <rect x="448" y="376" width="40" height="20" rx="6" fill="#2a1114" stroke="#ef4444" stroke-opacity="0.5"/>
-  <text x="468" y="390" text-anchor="middle" fill="#f87171" font-size="10" font-weight="700" font-family="system-ui, -apple-system, Segoe UI, sans-serif">Kill</text>
+  <rect x="38" y="378" width="48" height="20" rx="10" fill="#fbbf24" fill-opacity="0.1" stroke="#fbbf24" stroke-opacity="0.28"/>
+  <text x="62" y="392" text-anchor="middle" fill="#fde68a" font-size="10" font-weight="600" font-family="ui-monospace, Consolas, monospace">MCP</text>
+  <text x="102" y="392" fill="#ffffff" font-size="11.5" font-weight="600" font-family="Inter, -apple-system, Segoe UI, sans-serif">MCP: node.exe</text>
+  <text x="278" y="392" fill="#e4e4e4" font-size="11" font-family="ui-monospace, Consolas, monospace">248 MB</text>
+  <text x="342" y="392" fill="#fca5a5" font-size="11" font-family="ui-monospace, Consolas, monospace">45.33.32.156:443</text>
+  <rect x="448" y="378" width="40" height="20" rx="6" fill="#f87171" fill-opacity="0.16" stroke="#f87171" stroke-opacity="0.35"/>
+  <text x="468" y="392" text-anchor="middle" fill="#fecaca" font-size="10" font-weight="600" font-family="Inter, -apple-system, Segoe UI, sans-serif">Kill</text>
 
-  <rect x="38" y="416" width="48" height="20" rx="10" fill="#082f3a" stroke="#22d3ee" stroke-opacity="0.4"/>
-  <text x="62" y="430" text-anchor="middle" fill="#67e8f9" font-size="10" font-weight="700" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">LLM</text>
-  <text x="102" y="430" fill="#fafafa" font-size="11.5" font-weight="700" font-family="system-ui, -apple-system, Segoe UI, sans-serif">Ollama</text>
-  <text x="278" y="430" fill="#e4e4e7" font-size="11" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">5,420 MB</text>
-  <text x="342" y="430" fill="#a1a1aa" font-size="11" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">local</text>
-  <rect x="448" y="416" width="40" height="20" rx="6" fill="#2a1114" stroke="#ef4444" stroke-opacity="0.5"/>
-  <text x="468" y="430" text-anchor="middle" fill="#f87171" font-size="10" font-weight="700" font-family="system-ui, -apple-system, Segoe UI, sans-serif">Kill</text>
+  <rect x="38" y="418" width="48" height="20" rx="10" fill="#ffffff" fill-opacity="0.06" stroke="#ffffff" stroke-opacity="0.1"/>
+  <text x="62" y="432" text-anchor="middle" fill="#e4e4e4" font-size="10" font-weight="600" font-family="ui-monospace, Consolas, monospace">LLM</text>
+  <text x="102" y="432" fill="#ffffff" font-size="11.5" font-weight="600" font-family="Inter, -apple-system, Segoe UI, sans-serif">Ollama</text>
+  <text x="278" y="432" fill="#e4e4e4" font-size="11" font-family="ui-monospace, Consolas, monospace">5,420 MB</text>
+  <text x="342" y="432" fill="#8e8e8e" font-size="11" font-family="ui-monospace, Consolas, monospace">local</text>
+  <rect x="448" y="418" width="40" height="20" rx="6" fill="#ffffff" fill-opacity="0.055" stroke="#ffffff" stroke-opacity="0.09"/>
+  <text x="468" y="432" text-anchor="middle" fill="#e4e4e4" font-size="10" font-weight="600" font-family="Inter, -apple-system, Segoe UI, sans-serif">Kill</text>
 
   <!-- Bottom Right: Alerts -->
-  <rect x="516" y="270" width="340" height="224" rx="12" fill="#14141b" stroke="#27272a"/>
-  <text x="530" y="292" fill="#71717a" font-size="10.5" font-weight="700" letter-spacing="1" font-family="system-ui, -apple-system, Segoe UI, sans-serif">GUARD ALERTS &amp; AUDIT LOG</text>
-  <rect x="774" y="277" width="68" height="20" rx="10" fill="#360c0e" stroke="#ef4444" stroke-opacity="0.5"/>
-  <text x="808" y="291" text-anchor="middle" fill="#f87171" font-size="10" font-weight="700" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">1 alert</text>
-  <rect x="530" y="312" width="312" height="54" rx="8" fill="#181820"/>
-  <rect x="530" y="312" width="4" height="54" rx="2" fill="#ef4444"/>
-  <text x="544" y="332" fill="#fafafa" font-size="11.5" font-weight="700" font-family="system-ui, -apple-system, Segoe UI, sans-serif">[SECURITY] MCP: node.exe external TCP</text>
-  <text x="544" y="350" fill="#a1a1aa" font-size="10.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">Connected to 45.33.32.156:443</text>
-  <rect x="530" y="376" width="312" height="48" rx="8" fill="#181820"/>
-  <rect x="530" y="376" width="4" height="48" rx="2" fill="#f59e0b"/>
-  <text x="544" y="396" fill="#fafafa" font-size="11.5" font-weight="700" font-family="system-ui, -apple-system, Segoe UI, sans-serif">Audit</text>
-  <text x="544" y="413" fill="#a1a1aa" font-size="10.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">ANIX Pulse HUD initialized</text>
+  <rect x="516" y="272" width="342" height="224" rx="14" fill="url(#glassCard)" stroke="#ffffff" stroke-opacity="0.09"/>
+  <line x1="528" y1="273" x2="846" y2="273" stroke="#ffffff" stroke-opacity="0.16"/>
+  <text x="532" y="294" fill="#8e8e8e" font-size="10.5" font-weight="600" letter-spacing="0.8" font-family="Inter, -apple-system, Segoe UI, sans-serif">ALERTS &amp; AUDIT</text>
+  <rect x="774" y="279" width="68" height="20" rx="10" fill="#f87171" fill-opacity="0.12" stroke="#f87171" stroke-opacity="0.34"/>
+  <text x="808" y="293" text-anchor="middle" fill="#fca5a5" font-size="10" font-weight="600" font-family="ui-monospace, Consolas, monospace">1 alert</text>
+  <rect x="532" y="314" width="310" height="54" rx="9" fill="#ffffff" fill-opacity="0.035" stroke="#ffffff" stroke-opacity="0.065"/>
+  <rect x="532" y="314" width="3" height="54" rx="1.5" fill="#f87171"/>
+  <text x="546" y="334" fill="#ffffff" font-size="11.5" font-weight="600" font-family="Inter, -apple-system, Segoe UI, sans-serif">[SECURITY] MCP: node.exe external TCP</text>
+  <text x="546" y="352" fill="#8e8e8e" font-size="10.5" font-family="ui-monospace, Consolas, monospace">Connected to 45.33.32.156:443</text>
+  <rect x="532" y="378" width="310" height="48" rx="9" fill="#ffffff" fill-opacity="0.035" stroke="#ffffff" stroke-opacity="0.065"/>
+  <rect x="532" y="378" width="3" height="48" rx="1.5" fill="#8e8e8e"/>
+  <text x="546" y="398" fill="#ffffff" font-size="11.5" font-weight="600" font-family="Inter, -apple-system, Segoe UI, sans-serif">Audit</text>
+  <text x="546" y="415" fill="#8e8e8e" font-size="10.5" font-family="ui-monospace, Consolas, monospace">anix.pulse initialized</text>
 </svg>

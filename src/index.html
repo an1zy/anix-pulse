@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ANIX Pulse</title>
+  <title>anix.pulse</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -11,22 +11,28 @@
     <header class="titlebar" data-tauri-drag-region>
       <div class="brand" data-tauri-drag-region>
         <span class="pulse-dot"></span>
-        <span class="brand-name">ANIX PULSE</span>
-        <span class="brand-tag">AI HUD · v0.1</span>
+        <span class="brand-name">anix<span class="brand-dot">.pulse</span></span>
+        <span class="brand-tag">v0.1</span>
       </div>
       <div class="titlebar-actions">
-        <button id="btn-unload" class="btn-panic" title="Unload all active Ollama models from VRAM">Panic: Unload VRAM</button>
-        <button id="btn-min" class="win-btn" aria-label="Minimize">—</button>
-        <button id="btn-max" class="win-btn" aria-label="Maximize">□</button>
-        <button id="btn-close" class="win-btn win-close" aria-label="Close">✕</button>
+        <button id="btn-unload" class="btn-panic" title="Unload all active Ollama models from VRAM">Unload VRAM</button>
+        <button id="btn-min" class="win-btn" aria-label="Minimize">
+          <svg viewBox="0 0 12 12"><line x1="2" y1="6" x2="10" y2="6" /></svg>
+        </button>
+        <button id="btn-max" class="win-btn" aria-label="Maximize">
+          <svg viewBox="0 0 12 12"><rect x="2.5" y="2.5" width="7" height="7" rx="1" /></svg>
+        </button>
+        <button id="btn-close" class="win-btn win-close" aria-label="Close">
+          <svg viewBox="0 0 12 12"><line x1="2.5" y1="2.5" x2="9.5" y2="9.5" /><line x1="9.5" y1="2.5" x2="2.5" y2="9.5" /></svg>
+        </button>
       </div>
     </header>
 
     <main class="grid">
-      <section class="card hero-hardware">
+      <section class="card">
         <div class="card-head">
-          <span class="card-title">HARDWARE &amp; VRAM FIT</span>
-          <span id="gpu-name" class="pill pill-cyan">Detecting...</span>
+          <span class="card-title">Hardware &amp; VRAM</span>
+          <span id="gpu-name" class="pill pill-mono">Detecting...</span>
         </div>
         <div class="vram-stats">
           <div class="ring-box">
@@ -41,25 +47,25 @@
           </div>
           <div class="hw-metrics">
             <div class="metric">
-              <span class="m-label">VRAM USED / FREE</span>
-              <span id="vram-detail" class="m-val">—</span>
+              <span class="m-label">VRAM</span>
+              <span id="vram-detail" class="m-val">-</span>
             </div>
             <div class="metric">
-              <span class="m-label">SYSTEM RAM</span>
-              <span id="ram-detail" class="m-val">—</span>
+              <span class="m-label">RAM</span>
+              <span id="ram-detail" class="m-val">-</span>
             </div>
             <div class="metric">
-              <span class="m-label">GPU UTIL / TEMP</span>
-              <span id="gpu-thermal" class="m-val">—</span>
+              <span class="m-label">GPU</span>
+              <span id="gpu-thermal" class="m-val">-</span>
             </div>
           </div>
         </div>
         <div id="fit-chips" class="fit-chips"></div>
       </section>
 
-      <section class="card hero-proxy">
+      <section class="card">
         <div class="card-head">
-          <span class="card-title">LOCAL ROUTING PROXY</span>
+          <span class="card-title">Local Proxy</span>
           <span id="proxy-status" class="pill pill-green">127.0.0.1:8787</span>
         </div>
         <div class="mode-switch">
@@ -70,20 +76,20 @@
         <div class="proxy-counters">
           <div class="counter"><span class="m-label">REQUESTS</span><strong id="p-total">0</strong></div>
           <div class="counter"><span class="m-label">LOCAL</span><strong id="p-local">0</strong></div>
-          <div class="counter"><span class="m-label">FAILOVERS</span><strong id="p-cloud">0</strong></div>
-          <div class="counter"><span class="m-label">EST TOKENS</span><strong id="p-tokens">0</strong></div>
+          <div class="counter"><span class="m-label">CLOUD</span><strong id="p-cloud">0</strong></div>
+          <div class="counter"><span class="m-label">TOKENS</span><strong id="p-tokens">0</strong></div>
         </div>
         <div class="fallback-row">
           <input id="cloud-url" type="text" placeholder="https://openrouter.ai/api/v1/chat/completions" />
-          <input id="cloud-key" type="password" placeholder="Optional fallback API key" />
+          <input id="cloud-key" type="password" placeholder="API key" />
           <button id="btn-save-cloud" class="btn-secondary">Save</button>
         </div>
         <div id="proxy-events" class="event-list"></div>
       </section>
 
-      <section class="card radar-panel">
+      <section class="card">
         <div class="card-head">
-          <span class="card-title">LIVE AI AGENT, MCP &amp; LLM RADAR</span>
+          <span class="card-title">Active Processes</span>
           <span id="proc-count" class="pill pill-muted">0 active</span>
         </div>
         <div class="radar-table-wrap">
@@ -104,14 +110,14 @@
         </div>
       </section>
 
-      <section class="card alerts-panel">
+      <section class="card">
         <div class="card-head">
-          <span class="card-title">GUARD ALERTS &amp; AUDIT LOG</span>
+          <span class="card-title">Alerts &amp; Audit</span>
           <span id="alert-count" class="pill pill-muted">0 alerts</span>
         </div>
         <div id="alerts-list" class="alerts-list"></div>
         <div class="guard-controls">
-          <label>RAM cap (MB) <input id="cfg-ram" type="number" value="4096" min="256" /></label>
+          <label>RAM MB <input id="cfg-ram" type="number" value="4096" min="256" /></label>
           <label>VRAM % <input id="cfg-vram" type="number" value="92" min="50" max="99" /></label>
           <label class="chk"><input id="cfg-mcp-net" type="checkbox" checked /> MCP TCP alert</label>
           <button id="btn-save-guard" class="btn-secondary">Apply</button>
